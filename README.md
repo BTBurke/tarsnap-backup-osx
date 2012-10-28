@@ -4,7 +4,7 @@ tarsnap-backup-osx
 A shell script and launchd config file to run daily backups on specified directories and upload them to tarsnap.
 
 To use:
-* Get a (http://tarsnap.com)[tarsnap] account and set it up
+* Get a [tarsnap](http://tarsnap.com) account and set it up
 * Make the backup.sh executable
 * Change the value of the array:string in the org.btb.backup.plist file to the location of your executable
 * Place org.btb.backup.plist in your ~/Library/LaunchAgents directory
