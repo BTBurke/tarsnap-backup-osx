@@ -6,7 +6,7 @@ A shell script and launchd config file to run daily backups on specified directo
 To use:
 * Get a [tarsnap](http://tarsnap.com) account and set it up
 * Make the backup.sh executable
-* Change the value of the array:string in the org.btb.backup.plist file to the location of your executable
+* Change the value of the array:string in the org.btb.backup.plist file to the location of your backup.sh. Use the full path name.
 * Place org.btb.backup.plist in your ~/Library/LaunchAgents directory
 * If you change the name of the plist file, make sure that Label:string in the file matches
 * Edit the $DIRS variable in the shell script to specify what directories you want to back up.  The format is `<directory>:<name>`.  This means that it will back up directory `<directory>` and name the archive `<name>-YY-MM-DD`.
