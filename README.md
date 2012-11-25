@@ -17,4 +17,4 @@ Other features:
 
 Issues:
 * The script strips white space in directories such as "/Google Drive/".  To fix, I create a shadow directory that is a symlink to the real directory (e.g., .gdrive/ -> /Google Drive/).  You can do this with `ln -s ~/Google\ Drive/ .gdrive`
-* Use full pathnames!  Using something like ~/directory can lead to problems.  You're much better off to use /Users/<username>/directory.
+* Use full pathnames!  Using something like `~/directory` can lead to problems.  You're much better off to use `/Users/<username>/directory`.
