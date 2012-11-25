@@ -4,8 +4,9 @@
 # is <drive>:<name>.  The tarsnap backup will be named <name>-YY-MM-DD.
 # Set SSIDHOME to be the name of your home network so that backups only occur
 # when you are connected to a known network.
-DIRS="~/dropbox:dropbox 
-~/.gdrive:gdrive"
+DIRS="/Users/btb/Dropbox:dropbox 
+/Users/btb/Insync:insync
+/Users/btb/project:project"
 SSIDHOME="1L7S1"
 
 
@@ -21,20 +22,20 @@ sleep 15
 
 for dir in $DIRS
 do
-	LOC=$(echo $dir | cut -f 1 -d :)
-	NAME=$(echo $dir | cut -f2 -d :)
-
+	LOC=$(echo $dir | cut -f1 -d : | tr -d [:blank:])
+	NAME=$(echo $dir | cut -f2 -d : | tr -d [:blank:])
+	echo $LOC
 
 	if [ $SSID == $SSIDHOME ]; then
 
 		if [ $(tarsnap --list-archives | grep $NAME-$DATETODAY) ]; then
-			echo $DATETODAY ":" $NAME "archive already exists." >> $LOGFILE
+			echo "WARNING: " $DATETODAY ":" $NAME "archive already exists." >> $LOGFILE
 		else
 			tarsnap -c -f $NAME-$DATETODAY $LOC
 			if [ $? -eq 0 ]; then
-				echo $DATETODAY ":" $NAME ": Backup successfully completed." >> $LOGFILE
+				echo "SUCCESS: " $DATETODAY ":" $NAME ": Backup successfully completed." >> $LOGFILE
 			else
-				echo $DATETODAY ":" $NAME ": Error uploading backup." >> $LOGFILE
+				echo "ERROR: " $DATETODAY ":" $NAME ": Error uploading backup." >> $LOGFILE
 			fi
 		fi
 

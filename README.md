@@ -16,4 +16,5 @@ Other features:
 * Logs are written by default to ~/logs/backup.log
 
 Issues:
-* The script can have problems with directories that include a space such as "/Google Drive/".  To fix, I create a shadow directory that is a symlink to the real directory (e.g., .gdrive/ -> /Google Drive/).  You can do this with `ln -s ~/Google\ Drive/ .gdrive`
+* The script strips white space in directories such as "/Google Drive/".  To fix, I create a shadow directory that is a symlink to the real directory (e.g., .gdrive/ -> /Google Drive/).  You can do this with `ln -s ~/Google\ Drive/ .gdrive`
+* Use full pathnames!  Using something like ~/directory can lead to problems.  You're much better off to use /Users/<username>/directory.
