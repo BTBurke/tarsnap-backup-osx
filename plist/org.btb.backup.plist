@@ -6,7 +6,7 @@
     <string>org.btb.backup</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/btb/bin/backup.sh</string>
+        <string>/Users/btb/bin/backup</string>
     </array>
     <key>StartInterval</key>
     <integer>86400</integer>
