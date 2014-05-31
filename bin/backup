@@ -20,7 +20,10 @@ DATETODAY=$(date "+%Y-%m-%d")
 TIMENOW=$(date "+%H%M")
 LOGFILE=/Users/btb/logs/backup.log
 
-# Commands
+### Commands ###
+
+# List command will list the names of the last time a successful backup was
+# pushed to Tarsnap
 LIST_CMD="list"
 
 if [[ $1 == $LIST_CMD ]]; then
